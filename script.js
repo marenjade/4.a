@@ -1,16 +1,12 @@
-// sketch.js
 
 console.log("JS LOADED ✅");
 
-// ---- SETTINGS ----
 const totalCards = 20;
 const cols = 5;
 const rows = 4;
 
-// UI area at top for title/score
 const headerH = 70;
 
-// Padding + gaps
 const pad = 30;
 const gap = 25;
 
@@ -35,13 +31,11 @@ function preload() {
 function setup() {
   createCanvas(windowWidth, windowHeight);
 
-  // Compute card size so squares fit in the available grid area
   const gridW = width - pad * 2 - gap * (cols - 1);
   const gridH = (height - headerH) - pad * 2 - gap * (rows - 1);
 
   const cardSize = min(gridW / cols, gridH / rows);
 
-  // Build card positions
   cards = [];
   let i = 0;
 
@@ -121,7 +115,6 @@ function mousePressed() {
   }
 }
 
-// Optional: keep full-screen canvas working on resize
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
